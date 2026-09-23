@@ -1,7 +1,7 @@
 {
   "name": "expo-youtube-downloader",
   "version": "0.1.0",
-  "description": "On-device YouTube format fetching, chunked throttle-free downloading, and native audio/video muxing for Expo apps \u2014 no server-side yt-dlp required.",
+  "description": "On-device YouTube format fetching, chunked throttle-free downloading, and native audio/video muxing for Expo apps — no server-side yt-dlp required.",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/sagark1510/expo-youtube-downloader#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sagark1510/expo-youtube-downloader.git"
+    "url": "git+https://github.com/sagark1510/expo-youtube-downloader.git"
   },
   "bugs": {
     "url": "https://github.com/sagark1510/expo-youtube-downloader/issues"
