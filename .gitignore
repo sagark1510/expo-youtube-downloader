@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# Continuous Native Generation output (only present inside a consuming app,
+# never committed here, but ignore defensively anyway)
+ios/build/
+ios/Pods/
+android/build/
+android/.cxx/
+android/.gradle/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# logs
+*.log
+npm-debug.*
+
+# typescript
+*.tsbuildinfo
+
+# editor
+.vscode/
+.idea/

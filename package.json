@@ -1,0 +1,60 @@
+{
+  "name": "expo-youtube-downloader",
+  "version": "0.1.0",
+  "description": "On-device YouTube format fetching, chunked throttle-free downloading, and native audio/video muxing for Expo apps \u2014 no server-side yt-dlp required.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build:potoken": "node scripts/build-potoken-bundle.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "expo",
+    "expo-module",
+    "react-native",
+    "youtube",
+    "youtube-downloader",
+    "video",
+    "audio",
+    "downloader",
+    "av-merge",
+    "innertube"
+  ],
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/sagark1510/expo-youtube-downloader#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sagark1510/expo-youtube-downloader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sagark1510/expo-youtube-downloader/issues"
+  },
+  "files": [
+    "src",
+    "ios",
+    "android",
+    "webview-src",
+    "expo-module.config.json",
+    "!**/*.generated.ts.bak"
+  ],
+  "peerDependencies": {
+    "expo": ">=51.0.0",
+    "expo-file-system": ">=17.0.0",
+    "react": "*",
+    "react-native": "*",
+    "react-native-webview": ">=13.0.0"
+  },
+  "dependencies": {
+    "bgutils-js": "^4.0.3",
+    "youtubei.js": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "react": "19.2.3",
+    "react-native": "0.86.2",
+    "react-native-webview": "13.16.1",
+    "typescript": "^5.6.0"
+  }
+}

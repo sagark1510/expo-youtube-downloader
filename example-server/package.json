@@ -1,0 +1,11 @@
+{
+  "name": "expo-youtube-downloader-proxy-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node proxy-script.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
