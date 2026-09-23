@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "expo-youtube-downloader-example",
+    "slug": "expo-youtube-downloader-example",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.sagark.eydexample"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "dev.sagark.eydexample"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "eydexample"
+  }
+}

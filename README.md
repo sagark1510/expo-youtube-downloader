@@ -75,6 +75,31 @@ sees or touches any user or video data; it's a static-asset relay, nothing
 else. Point `PoTokenProvider`'s `proxyScriptUrl` prop at wherever you deploy
 it.
 
+### It must be served over real HTTPS — this isn't optional
+
+The `PoTokenProvider` WebView is genuinely navigated to `https://www.youtube.com`.
+A real HTTPS page fetching a plain-HTTP resource is **Mixed Content**, and
+WebKit blocks it unconditionally — this is a web-platform security boundary
+enforced on the actual loaded page content, not an iOS app permission. **No
+`Info.plist` ATS setting fixes this** — not `NSAllowsLocalNetworking`, not
+`NSAllowsArbitraryLoadsInWebContent`, not even the blanket
+`NSAllowsArbitraryLoads: true` — all of those govern the *app's own*
+networking; they don't touch what a real webpage loaded inside a WKWebView
+is allowed to fetch. The failure mode is a generic, unhelpful
+`TypeError: Load failed` with no CORS-style message to point you at the
+real cause — confirmed the hard way while building this.
+
+- **Production**: deploy `proxy-script.js` behind whatever domain you're
+  already serving HTTPS on (a few lines added to an existing Express app,
+  or as a Vercel/Cloudflare Worker/etc. function) — nothing special needed,
+  a real cert from a real domain just works.
+- **Local development**: `localhost`/a LAN IP need a real (if self-signed)
+  TLS cert — plain HTTP will not work even for local testing, and even a
+  LAN IP is still "http://" from the page's perspective. See
+  [`example/`](./example) for a complete working local HTTPS setup
+  (`example-server/generate-certs.sh` + `https-dev-server.js`, trusted into
+  the iOS Simulator's keychain).
+
 ## Usage
 
 ```tsx

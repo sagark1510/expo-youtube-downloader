@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node proxy-script.js"
+    "start": "node proxy-script.js",
+    "start:https": "node https-dev-server.js"
   },
   "dependencies": {
     "express": "^4.19.2"

@@ -23,3 +23,4 @@ npm-debug.*
 # editor
 .vscode/
 .idea/
+*.tgz
