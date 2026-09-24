@@ -220,6 +220,17 @@ The WebView bundle (`src/potokenBundle.generated.ts`) is built from
 esbuild — regenerate it with `npm run build:potoken` after editing that file
 or bumping `youtubei.js`/`bgutils-js`.
 
+## Using this with an AI coding agent
+
+If you're integrating this library with the help of Claude Code (or another
+agent that reads `.claude/skills/`), copy
+[`.claude/skills/expo-youtube-downloader/`](./.claude/skills/expo-youtube-downloader)
+into your own project's `.claude/skills/` directory. It's a condensed,
+task-oriented version of this README — the proxy relay requirement, the
+HTTPS/Mixed-Content gotcha, the full API, and every platform pitfall found
+while building this — written so an agent can integrate the library
+correctly without rediscovering them the hard way.
+
 ## License
 
 MIT
