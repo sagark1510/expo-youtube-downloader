@@ -5,6 +5,12 @@ native audio/video muxing for Expo / React Native apps. No server-side
 `yt-dlp`, no video/audio ever proxied through your own backend — everything
 except one tiny static-script relay (see below) runs on the phone.
 
+<p align="center">
+  <img src="./assets/demo.gif" alt="expo-youtube-downloader demo: pasting a YouTube URL, calling getVideoInfo(), picking a format, and downloadMedia() completing" width="360">
+</p>
+
+<p align="center"><sub>The <a href="./example">example app</a> — getVideoInfo() → pick a format → downloadMedia(), real BotGuard attestation and on-device muxing included.</sub></p>
+
 Given a YouTube URL, this library gets you:
 
 - **Metadata + a format list** (`getVideoInfo`) — title, thumbnail, duration,
