@@ -28,6 +28,14 @@ const code = result.outputFiles[0].text;
 const banner = `// GENERATED FILE — do not hand-edit.
 // Source: webview-src/potoken-entry.mjs
 // Regenerate with: npm run build:potoken
+//
+// This bundle embeds the internals of youtubei.js and bgutils-js, which
+// means it contains a couple of Google API keys (grep for "AIza"). These
+// are YouTube's own public InnerTube web-client identifiers (WEB /
+// WEB_EMBEDDED_PLAYER / WEB_CREATOR) and the BotGuard attestation client
+// key — not secrets, not billing-scoped, not specific to this project.
+// Every consumer of youtubei.js/bgutils-js ships the same values, and
+// they're visible in youtube.com's own page JS. Safe to commit.
 `;
 
 const ts = `${banner}export const POTOKEN_BUNDLE_JS = ${JSON.stringify(code)};\n`;

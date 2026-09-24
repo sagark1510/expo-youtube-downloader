@@ -6,7 +6,8 @@
   "types": "src/index.ts",
   "scripts": {
     "build:potoken": "node scripts/build-potoken-bundle.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "pack:example": "mkdir -p example/vendor && npm pack --pack-destination example/vendor"
   },
   "keywords": [
     "expo",

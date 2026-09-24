@@ -47,12 +47,22 @@ Edit `PROXY_SCRIPT_URL` in `App.tsx` to your Mac's LAN IP (`ipconfig getifaddr e
 const PROXY_SCRIPT_URL = "https://<your-lan-ip>:4443/proxy-script";
 ```
 
-### 4. Install and run
+### 4. Pack the library and install
+
+From the repo root, pack the library into a tarball the example depends on
+(this repo doesn't use symlinked/workspace installs — Metro chokes on the
+duplicate module identity that creates):
 
 ```bash
+npm run pack:example    # from repo root; writes example/vendor/expo-youtube-downloader-0.1.0.tgz
+cd example
 npm install
-npx expo run:ios      # or: npx expo run:android
+npx expo run:ios        # or: npx expo run:android
 ```
+
+Re-run `npm run pack:example` (from the root) + `npm install` (in `example/`)
+whenever you change the library source, since it's a real packed snapshot,
+not a live symlink.
 
 ## Not for production
 

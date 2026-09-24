@@ -185,6 +185,17 @@ Full types are in [`src/types.ts`](./src/types.ts).
 - **The WebView must render at a real, non-zero size.** It's positioned
   off-screen, not hidden via `display:none` or 0×0 — a zero-size WebView is
   itself an anomalous signal real browsers never produce.
+- **`src/potokenBundle.generated.ts` contains a couple of `AIza...`-looking
+  strings.** These are not leaked secrets — they're YouTube's own public
+  InnerTube web-client keys (`WEB` / `WEB_EMBEDDED_PLAYER` / `WEB_CREATOR`)
+  and the BotGuard attestation client key, hardcoded inside `youtubei.js`
+  and `bgutils-js` themselves and pulled in by esbuild when the bundle is
+  built. They identify which YouTube client is calling, not who — no
+  OAuth, no billing account, no secret pairing. Every consumer of those two
+  libraries (and most open-source YouTube tooling in general) ships the
+  same values, and they're visible in youtube.com's own page JS. Safe to
+  commit; flagged here so it doesn't look like an incident to a future
+  contributor or a secret scanner.
 
 ## How it works (architecture)
 
